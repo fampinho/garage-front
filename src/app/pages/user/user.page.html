@@ -1,13 +1,83 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>User</ion-title>
+    <ion-input readonly>Welcome {{username}} / Role: {{role}}</ion-input>
   </ion-toolbar>
 </ion-header>
  
-<ion-content class="ion-padding">
-<ion-item>
-  <ion-label>User</ion-label>
-  <ion-input> {{ username }} </ion-input>
-  <ion-label>Senha</ion-label>
-  <ion-input>{{ password }}</ion-input>
-</ion-item>
+    <ion-content >
+      <form >
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-title position="stacked">Customer Details</ion-title>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" >{{name}}</ion-input>
+          </ion-item>
+         
+          <ion-item>
+            <ion-label position="stacked">Middle Name<ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" >{{midName}}</ion-input>
+          </ion-item>
+         
+          <ion-item>
+            <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" >{{surname}}</ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Phone <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" >{{phone}}</ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">PPSN <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" >{{ppsn}}</ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">VEHICLES</ion-label>
+            <li class="ion-padding-vertical" *ngFor="let vehicle of vehicles">{{vehicle.type}}: {{vehicle.maker}} {{vehicle.model}} {{vehicle.manufacture}} / Fuel: {{vehicle.fuel}} / Licence: {{vehicle.licenceNumber}} </li>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Notes</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+        </ion-list>
+
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin">Create account</ion-button>
+        </div>
+      </form>
+    </ion-content>
+    <ion-alert-controller></ion-alert-controller>
+  <!-- </ion-app> -->
+
+  <!-- <script>
+    const controller = document.querySelector('ion-alert-controller');
+    let firstName, lastName;
+
+    function processForm(event) {
+      event.preventDefault();
+      controller.create({
+        header: 'Account Created',
+        message: `Created account for: <b>${firstName} ${lastName}</b>`,
+        buttons: [{
+          text: 'OK'
+        }]
+      }).then(alert => alert.present());
+    }
+
+    function handleFirstNameValue(event) {
+      firstName = event.target.value;
+    }
+
+    function handleLastNameValue(event) {
+      lastName = event.target.value;
+    }
+  </script>
+</body> -->
+
+
