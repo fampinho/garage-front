@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { SharedService } from '../shared.service';
 
 @Component({
     selector: 'app-home',
@@ -25,15 +24,8 @@ export class HomePage implements OnInit {
    }
     this.http.post<any>('http://localhost:8080/garage/login', body).subscribe(data => {
     this.data = data;
-    // console.log(data)
-    // console.log(this.data)
-    // this.router.navigate(['/user']);
+    this.router.navigate(['user/' +this.data.id]);
 })
-// console.log(this.data+"abs")
-    // this.router.navigate(['/user'], this.data);
-    // console.log(this.data.id);
-    // alert(1)
-    // alert(2)
 
   }
 

@@ -6,7 +6,13 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
   {
     path: '',
-    component: TabsPage
+    component: TabsPage,
+    children:[
+      {
+        path: ':id',
+        loadChildren: () => import('../user/user.module').then( m => m.UserPageModule)
+      }
+    ]
   }
 ];
 
