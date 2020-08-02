@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-input readonly>Welcome {{username}} / Role: {{role}}</ion-input>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-toolbar color="primary">
+      <ion-item>
+        <ion-title position="stacked">User Details</ion-title>
+      </ion-item>
+    </ion-toolbar>
+    
+    <ion-item>
+      <ion-label position="stacked">USERNAME <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="username" name="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">PASSWORD <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+
+    <ion-toolbar color="primary">
+      <ion-item>
+        <ion-title position="stacked">Customer Details</ion-title>
+      </ion-item>
+    </ion-toolbar>
+
+    <ion-item>
+      <ion-label position="stacked">PPSN <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="ppsn" name="ppsn"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="name" name="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Middle Name<ion-text color="danger"></ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="midName" name="midName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="surname" name="surname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Phone <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="phone" name="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+
+
+    <ion-toolbar color="primary">
+      <ion-item>
+        <ion-title position="stacked">Vehicle Details</ion-title>
+      </ion-item>
+    </ion-toolbar>
+    <ion-item>
+
+      <li class="ion-padding-vertical" *ngFor="let vehicle of vehicles">{{vehicle.type}}: {{vehicle.maker}}
+        {{vehicle.model}} {{vehicle.manufacture}} / Fuel: {{vehicle.fuel}} / Licence: {{vehicle.licenceNumber}} </li>
+      <ion-label position="stacked">Type <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-select required type="text" placeholder="Select One" [(ngModel)]="typeVehicle" name="typeVehicle">
+        <ion-select-option name="CAR">CAR</ion-select-option>
+        <ion-select-option name="MOTOBIKE">MOTORBIKE</ion-select-option>
+        <ion-select-option name="VAN">VAN</ion-select-option>
+        <ion-select-option name="MINIBUS">MINIBUS</ion-select-option>
+      </ion-select>
+      <ion-label position="stacked">Maker <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="maker" name="maker"></ion-input>
+      <ion-label position="stacked">Model <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="model" name="model"></ion-input>
+      <ion-label position="stacked">Manufacture <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="manufacture" name="manufacture"></ion-input>
+      <ion-label position="stacked">Fuel <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-select required type="text" placeholder="Select One" [(ngModel)]="fuelVehicle" name="fuelVehicle">
+        <ion-select-option name="DIESEL">DIESEL</ion-select-option>
+        <ion-select-option name="PETROL">PETROL</ion-select-option>
+        <ion-select-option name="ELETRIC">ELETRIC</ion-select-option>
+        <ion-select-option name="HYBRID">HYBRID</ion-select-option>
+      </ion-select>
+      <ion-label position="stacked">Licence № <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="licenceNumber" name="licenceNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block" type="submit" (click)="addVehicle()">ADD</ion-button>
+      <ion-button expand="block" type="submit" (click)="removeVehicle()">REMOVE</ion-button>
+    </ion-item>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" (click)="onCreate()" class="ion-no-margin">SUBMIT</ion-button>
+    </div>
+  </form>
+</ion-content>
+<ion-alert-controller></ion-alert-controller>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-input readonly>Welcome {{username}} / Role: {{role}}</ion-input>
+  </ion-toolbar>
+</ion-header>
+ 
+    <ion-content >
+      <form >
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-title position="stacked">Customer Details</ion-title>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">PPSN <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="ppsn" name="ppsn"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="name" name="name"></ion-input>
+          </ion-item>
+         
+          <ion-item>
+            <ion-label position="stacked">Middle Name<ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="midName" name="midName" ></ion-input>
+          </ion-item>
+         
+          <ion-item>
+            <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="surname" name="surname"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Phone <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="phone" name="phone"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Email <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="email" name="email"></ion-input>
+          </ion-item>
+          
+          
+          <ion-item>
+            <ion-label position="stacked">VEHICLES</ion-label>
+            <li class="ion-padding-vertical" *ngFor="let vehicle of vehicles">{{vehicle.type}}: {{vehicle.maker}} {{vehicle.model}} {{vehicle.manufacture}} / Fuel: {{vehicle.fuel}} / Licence: {{vehicle.licenceNumber}} </li>
+          </ion-item>
+
+          
+        </ion-list>
+
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" (click)="onSubmit()" class="ion-no-margin">SUBMIT</ion-button>
+        </div>
+      </form>
+    </ion-content>
+    <ion-alert-controller></ion-alert-controller>

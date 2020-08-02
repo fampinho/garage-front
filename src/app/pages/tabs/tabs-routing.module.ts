@@ -7,11 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: TabsPage,
-    children:[
+    children: [
       {
         path: ':id',
-        loadChildren: () => import('../user/user.module').then( m => m.UserPageModule)
-      }
+        loadChildren: () => import('../user/user.module').then(m => m.UserPageModule)
+      },
     ]
   }
 ];
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
