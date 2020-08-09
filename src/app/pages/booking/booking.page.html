@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-input readonly>Welcome {{name}}!!!</ion-input>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+
+      <ion-toolbar color="primary">
+        <ion-input readonly>BOOKING DETAILS</ion-input>
+      </ion-toolbar>
+
+      <ion-row>
+        <ion-item>
+          <ion-col>
+            <ion-item>
+              <ion-label position="stacked">Appointment<ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-datetime required displayFormat="DD/MM/YYYY" [(ngModel)]="appointment" name="appointment"
+                min="2020-01-01" max="2030-12-31"></ion-datetime>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-button type="submit" (click)="blockSundays()" class="ion-no-margin">ADD</ion-button>
+            </ion-item>
+          </ion-col>
+        </ion-item>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Service Type <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-select required type="text" placeholder="Select One" [(ngModel)]="serviceType" name="serviceType">
+              <ion-select-option value="ANNUAL_SERVICE" name="AS">Annual Service</ion-select-option>
+              <ion-select-option value="MAJOR_SERVICE" name="MS">Major Service</ion-select-option>
+              <ion-select-option value="REPAIR_FAULT" name="RF">Repair/Fault</ion-select-option>
+              <ion-select-option value="MAJOR_REPAIR" name="MR">Major Repair</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        
+      </ion-row>
+
+      <ion-item>
+        <ion-label position="stacked">Notes<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-textarea required type="text" placeholder="Describe the car issue." [(ngModel)]="description"
+          name="description"></ion-textarea>
+      </ion-item>
+
+      <ion-toolbar color="primary">
+        <ion-input readonly>CUSTOMER DETAILS</ion-input>
+      </ion-toolbar>
+
+      <ion-item>
+        <ion-label position="stacked">PPSN</ion-label>
+        <ion-input readonly [(ngModel)]="ppsn" name="ppsn"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">First Name</ion-label>
+        <ion-input readonly [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Middle Name</ion-label>
+
+        <ion-input readonly [(ngModel)]="midName" name="midName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Last Name </ion-label>
+        <ion-input readonly [(ngModel)]="surname" name="surname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Phone </ion-label>
+        <ion-input readonly [(ngModel)]="phone" name="phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Email </ion-label>
+        <ion-input readonly [(ngModel)]="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-toolbar color="primary">
+        <ion-input position="stacked">VEHICLES</ion-input>
+      </ion-toolbar>
+      <ion-item>
+        <ion-label position="stacked"></ion-label>
+        <div>
+
+          <li class="ion-padding-vertical" *ngFor="let vehicle of vehicles;let i = index">{{vehicle.type}}:
+            {{vehicle.maker}}
+            {{vehicle.model}} {{vehicle.manufacture}} / Fuel: {{vehicle.fuel}} / Licence: {{vehicle.licenceNumber}}
+            <ion-col>
+              <ion-item>
+                <ion-button expand="block" type="submit" (click)="removeVehicles(i)" class="ion-no-margin">REMOVE
+                </ion-button>
+              </ion-item>
+            </ion-col>
+          </li>
+
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" (click)="onSubmit()" class="ion-no-margin">SUBMIT</ion-button>
+    </div>
+  </form>
+</ion-content>
+<ion-alert-controller></ion-alert-controller>

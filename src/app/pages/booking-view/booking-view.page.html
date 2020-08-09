@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-input readonly>Welcome {{name}}!!!</ion-input>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+
+      <ion-toolbar color="primary">
+        <ion-input readonly>BOOKING DETAILS</ion-input>
+        <ion-input readonly>STATUS: {{bookingStatus}} / STAFF : {{staffName}}</ion-input>
+      </ion-toolbar>
+
+      <ion-row>
+        <ion-item>
+          <ion-col>
+            <ion-item>
+              <ion-label position="stacked">Appointment</ion-label>
+              <ion-datetime readonly displayFormat="DD/MM/YYYY" [(ngModel)]="appointment" name="appointment"
+                min="2020-01-01" max="2030-12-31"></ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-item>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Service Type</ion-label>
+            <ion-input readonly type="text" [(ngModel)]="serviceType" name="serviceType">
+
+            </ion-input>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-item>
+        <ion-label position="stacked">Notes
+        </ion-label>
+        <ion-textarea readonly type="text" placeholder="Describe the car issue." [(ngModel)]="description"
+          name="description"></ion-textarea>
+      </ion-item>
+
+      <ion-toolbar color="primary">
+        <ion-input readonly>CUSTOMER DETAILS</ion-input>
+      </ion-toolbar>
+
+      <ion-item>
+        <ion-label position="stacked">PPSN</ion-label>
+        <ion-input readonly [(ngModel)]="ppsn" name="ppsn"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">First Name</ion-label>
+        <ion-input readonly [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Middle Name</ion-label>
+
+        <ion-input readonly [(ngModel)]="midName" name="midName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Last Name </ion-label>
+        <ion-input readonly [(ngModel)]="surname" name="surname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Phone </ion-label>
+        <ion-input readonly [(ngModel)]="phone" name="phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Email </ion-label>
+        <ion-input readonly [(ngModel)]="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-toolbar color="primary">
+        <ion-input position="stacked">VEHICLES</ion-input>
+      </ion-toolbar>
+      <ion-item>
+        <ion-label position="stacked"></ion-label>
+        <div>
+
+          <li class="ion-padding-vertical">{{type}}:
+            {{maker}}
+            {{model}} {{manufacture}} / Fuel: {{fuel}} / Licence: {{licenceNumber}}
+          </li>
+
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+  </form>
+</ion-content>
+<ion-alert-controller></ion-alert-controller>
