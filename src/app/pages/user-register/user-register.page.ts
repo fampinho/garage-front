@@ -50,10 +50,10 @@ export class UserRegisterPage implements OnInit {
       ppsn: this.ppsn,
       vehicles: this.vehicles
     }
-    this.http.post<any>("http://localhost:8080/garage/customer/add", this.body).subscribe(data => {
+    this.http.post<any>("http://localhost:8080/garage/customer/add", this.body).subscribe((data:any) => {
 
       let uri = encodeURI('http://localhost:8080/garage/customer/findByPPSN?ppsn=');
-      this.http.get(uri + this.ppsn).subscribe(data => {
+      this.http.get(uri + this.ppsn).subscribe((data:any) => {
         let login = {
           username: this.username,
           password: this.password,

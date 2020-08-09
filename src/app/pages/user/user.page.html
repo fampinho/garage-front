@@ -1,15 +1,18 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-input readonly>Welcome {{username}} / Role: {{role}}</ion-input>
-  </ion-toolbar>
+    <ion-item color="primary" class="ion-padding">
+      <ion-input readonly>Welcome {{username}} / Role: {{role}}</ion-input>
+      <ion-button type="submit" class="" (click)="onBooking()">NEW BOOKING</ion-button>
+      <ion-button type="submit" class="" (click)="viewBooking()">VIEW BOOKING</ion-button>
+    </ion-item>
 </ion-header>
 
 <ion-content>
+
   <form>
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
-      <ion-item>
-        <ion-title position="stacked">Customer Details</ion-title>
-      </ion-item>
+      <ion-toolbar color="primary">
+        <ion-input position="stacked">CUSTOMER DETAILS</ion-input>
+      </ion-toolbar>
 
       <ion-item>
         <ion-label position="stacked">PPSN <ion-text color="danger"></ion-text>
@@ -49,8 +52,11 @@
       </ion-item>
 
 
+      <ion-toolbar color="primary">
+        <ion-input position="stacked">VEHICLES</ion-input>
+      </ion-toolbar>
       <ion-item>
-        <ion-label position="stacked">VEHICLES</ion-label>
+        <ion-label position="stacked"></ion-label>
         <li class="ion-padding-vertical" *ngFor="let vehicle of vehicles">{{vehicle.type}}: {{vehicle.maker}}
           {{vehicle.model}} {{vehicle.manufacture}} / Fuel: {{vehicle.fuel}} / Licence: {{vehicle.licenceNumber}} </li>
       </ion-item>
@@ -61,10 +67,7 @@
     <div class="ion-padding">
       <ion-button expand="block" type="submit" class="ion-no-margin" (click)="onUpdate()">UPDATE</ion-button>
     </div>
-    
-    <div class="ion-padding">
-      <ion-button expand="block" type="submit" class="ion-no-margin" (click)="onCreate()">SAVE</ion-button>
-    </div>
+
   </form>
 </ion-content>
 <ion-alert-controller></ion-alert-controller>

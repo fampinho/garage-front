@@ -27,7 +27,7 @@ export class UserUpdatePage implements OnInit {
   ngOnInit() {
     this.id = this.actRoute.snapshot.paramMap.get('id');
     let uri =encodeURI('http://localhost:8080/garage/login/findById?id=');
-    this.http.get(uri+this.id).subscribe(data => {
+    this.http.get(uri+this.id).subscribe((data:any) => {
     this.idCust = data.customer.id;
     this.username = data.username;
     this.role = data.role;
@@ -38,6 +38,7 @@ export class UserUpdatePage implements OnInit {
     this.ppsn = data.customer.ppsn;
     this.email = data.customer.email;
     this.vehicles = data.customer.vehicles;
+    
     
    })
   }

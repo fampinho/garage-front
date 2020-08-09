@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -21,7 +20,6 @@ export class UserPage implements OnInit {
   ppsn: any;
   email: any;
   vehicles: any[];
-  dataCustomer: any[];
 
   constructor(private actRoute: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
@@ -30,7 +28,7 @@ export class UserPage implements OnInit {
 
     this.id = this.actRoute.snapshot.paramMap.get('id');
     let uri = encodeURI('http://localhost:8080/garage/login/findById?id=');
-    this.http.get(uri + this.id).subscribe(data => {
+    this.http.get(uri + this.id).subscribe((data : any) => {
       this.idCust = data.customer.id;
       this.username = data.username;
       this.role = data.role;
@@ -47,5 +45,12 @@ export class UserPage implements OnInit {
   onUpdate() {
     this.router.navigate(['user-update/' + this.id]);
   }
-
+  
+  onBooking(){
+    this.router.navigate(['booking/' + this.idCust]);
+  }
+  
+  viewBooking(){
+    this.router.navigate(['booking-view/' + this.idCust]);
+  }
 }
