@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-label required type="text">Welcome {{username}} / Role: {{role}}</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-toolbar color="primary">
+        <ion-label required type="text">USER DETAILS</ion-label>
+      </ion-toolbar>
+
+      <ion-item>
+        <ion-label position="stacked">Username <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Role <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-select required type="text" placeholder="Select One" [(ngModel)]="role" name="role">
+          <ion-select-option name="STAFF">STAFF</ion-select-option>
+          <ion-select-option name="ADMNIN">ADMIN</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-toolbar color="primary">
+        <ion-label required type="text">STAFF DETAILS</ion-label>
+      </ion-toolbar>
+
+      <ion-item>
+        <ion-label position="stacked">PPSN <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="ppsn" name="ppsn"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Middle Name
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="midName" name="midName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="surname" name="surname"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" (click)="onSubmit()">Submit</ion-button>
+    </div>
+
+  </form>
+</ion-content>
+<ion-alert-controller></ion-alert-controller>

@@ -52,5 +52,8 @@ export class UserPage implements OnInit {
   
   viewBooking(){
     this.router.navigate(['booking-view/' + this.idCust]);
+    this.router.navigate(['booking-view/' + null + "/" + this.idCust + "/"
+    + this.vehicles[0].type + "/" + this.vehicles[0].maker + "/" + this.vehicles[0].model + "/" + this.vehicles[0].manufacture + "/" + this.vehicles[0].fuel + "/" + this.vehicles[0].licenceNumber + "/"
+    + this.name + "/" + this.midName+ "/" + this.surname+ "/" + this.phone+ "/" + this.email+ "/" + this.ppsn]);
   }
 }

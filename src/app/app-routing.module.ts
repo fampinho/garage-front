@@ -62,6 +62,18 @@ const routes: Routes = [
     path: 'booking-view/:appointment/:id/:type/:maker/:model/:fuel/:manufacture/:licenceNumber/:name/:midName/:surname/:phone/:email/:ppsn',
     loadChildren: () => import('./pages/booking-view/booking-view.module').then( m => m.BookingViewPageModule)
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'admin/:id',
+    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'staff-register',
+    loadChildren: () => import('./pages/staff-register/staff-register.module').then( m => m.StaffRegisterPageModule)
+  },
 
   // {
   //   path: 'service',

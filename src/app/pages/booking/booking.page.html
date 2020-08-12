@@ -12,37 +12,22 @@
         <ion-input readonly>BOOKING DETAILS</ion-input>
       </ion-toolbar>
 
-      <ion-row>
-        <ion-item>
-          <ion-col>
-            <ion-item>
-              <ion-label position="stacked">Appointment<ion-text color="danger">*</ion-text>
-              </ion-label>
-              <ion-datetime required displayFormat="DD/MM/YYYY" [(ngModel)]="appointment" name="appointment"
-                min="2020-01-01" max="2030-12-31"></ion-datetime>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-button type="submit" (click)="blockSundays()" class="ion-no-margin">ADD</ion-button>
-            </ion-item>
-          </ion-col>
-        </ion-item>
-
-        <ion-col>
-          <ion-item>
-            <ion-label position="stacked">Service Type <ion-text color="danger">*</ion-text>
-            </ion-label>
-            <ion-select required type="text" placeholder="Select One" [(ngModel)]="serviceType" name="serviceType">
-              <ion-select-option value="ANNUAL_SERVICE" name="AS">Annual Service</ion-select-option>
-              <ion-select-option value="MAJOR_SERVICE" name="MS">Major Service</ion-select-option>
-              <ion-select-option value="REPAIR_FAULT" name="RF">Repair/Fault</ion-select-option>
-              <ion-select-option value="MAJOR_REPAIR" name="MR">Major Repair</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-col>
-        
-      </ion-row>
+      <ion-item>
+        <ion-label position="stacked">Appointment<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-datetime required displayFormat="DD/MM/YYYY" [(ngModel)]="appointment" name="appointment" min="2020-01-01"
+          max="2030-12-31"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Service Type <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-select required type="text" placeholder="Select One" [(ngModel)]="serviceType" name="serviceType">
+          <ion-select-option value="ANNUAL_SERVICE" name="AS">Annual Service</ion-select-option>
+          <ion-select-option value="MAJOR_SERVICE" name="MS">Major Service</ion-select-option>
+          <ion-select-option value="REPAIR_FAULT" name="RF">Repair/Fault</ion-select-option>
+          <ion-select-option value="MAJOR_REPAIR" name="MR">Major Repair</ion-select-option>
+        </ion-select>
+      </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Notes<ion-text color="danger">*</ion-text>

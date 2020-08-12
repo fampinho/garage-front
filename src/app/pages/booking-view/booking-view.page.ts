@@ -52,6 +52,7 @@ export class BookingViewPage implements OnInit {
     this.ppsn = this.actRoute.snapshot.paramMap.get('ppsn');
     let uri = encodeURI('http://localhost:8080/garage/booking/currentBooking?appointment=' + this.appointment + '&idCustomer=' + this.idCust);
     this.http.get(uri).subscribe((data: any) => {
+      console.log(data)
       this.id = data.id;
       this.bookingStatus = data.bookingStatus;
       this.appointment = data.appointment;

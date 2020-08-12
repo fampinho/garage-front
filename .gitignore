@@ -29,3 +29,6 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+src/app/pages/tabs/tabs-routing.module.ts
+src/app/pages/tabs/tabs.page.html
+src/app/pages/tabs/tabs.page.ts
