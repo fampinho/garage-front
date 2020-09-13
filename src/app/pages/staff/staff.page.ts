@@ -29,6 +29,7 @@ export class StaffPage implements OnInit {
     this.id = this.actRoute.snapshot.paramMap.get('id');
     let uri = encodeURI('http://localhost:8080/garage/login/findById?id=');
     this.http.get(uri + this.id).subscribe((data:any) => {
+      console.log(data)
       this.idStaff = data.staff.id;
       this.username = data.username;
       this.role = data.role;

@@ -28,7 +28,7 @@ export class HomePage implements OnInit {
     this.http.post<any>('http://localhost:8080/garage/login/login', body)
     .map(res => res).subscribe(data =>  {
       this.data = data;
-      console.log(this.message)
+      console.log(this.data)
       this.message = data.message;
       if (data.role == "CUSTOMER") {
         this.router.navigate(['user/' + this.data.id]);
